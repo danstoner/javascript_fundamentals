@@ -144,6 +144,7 @@ var hoistedVariable = 'test';
 console.log(hoistedVariable);
 
 
+
 // leading parenthesis syntax to cause automatic invocation
 (function invokeImmediately() {
     console.log('invoked automatically');
@@ -154,3 +155,11 @@ console.log(hoistedVariable);
     console.log('invoked automatically too');
 }();
 
+
+// variable scope
+var global = 1;
+function aFunction(){
+    var local = 2;
+    console.log(global);
+    console.log(local);
+}
