@@ -163,3 +163,48 @@ function aFunction(){
     console.log(global);
     console.log(local);
 }
+
+
+// this
+//
+/* - In the global scope, 'this' refers to the window object.
+ * - Inside the method of a custom object, 'this' is the custom object itself.
+ * - In a constructor, 'this' is the instance object returned by the constructor.
+*/
+(function () {
+    'use strict';
+    console.log(this);
+    var object = {
+	property:'I belong to this',
+	method: function(){
+	    return this.property;
+	}
+    }
+    console.log(object.method());
+
+    function Person(name) {
+	this.name = name;
+    }
+
+    var bob = new Person('Bob');
+    console.log(bob.name);
+}());
+
+
+
+// Reserved Words / keywords
+// - browsers frequently report something like Unexpected token if try to use Reserved Words inappropriately
+// var function = 'whoops';
+
+// javscript linting tool can help  http://www.jslint.com
+
+// get around this by quoting
+var element = {
+    'class': 'some-class'
+};
+
+// in console...
+//> element['class']
+//  "some-class"
+
+
