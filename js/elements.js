@@ -46,4 +46,29 @@
 	    console.log('I am a ' + heading.childNodes[x].tagName);
 	}
     }
+
+    console.log(heading.children.length);
+    
+    console.log(heading.children[0].nodeName);
+    console.log(heading.firstChild.nodeName);
+
+    console.log(subHeading.parentNode.nodeName);
+
+    console.log(heading.firstChild.nextSibling.nodeName);
+    console.log(heading.lastChild.previousSibling.nodeName);
+
+    document.body.appendChild(subHeading);
+    document.body.insertBefore(subHeading,heading);
+
+    document.body.removeChild(heading);
+
+    if (document.body.contains(heading)) {
+	document.body.removeChild(heading);
+    }
+
+    var substitute = document.createElement('i');
+    substitute.textContent = 'I have been swapped in';
+    document.body.replaceChild(substitute, subHeading);
+
+    
 }());
