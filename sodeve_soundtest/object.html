@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function PlaySound(soundObj) {
+			  var sound = document.getElementById(soundObj);
+			  if (sound) {
+					if (sound.object)
+						//IE needs this
+						sound.object.Play();
+					else
+						sound.Play();
+				  }
+			}
+		</script>
+	</head>
+	<body>
+		<object id="beep3" type="audio/wav" style="visibility:hidden;" data="sounds/beep3.wav">
+			<param name="autostart" value="false" />
+		</object>
+		<object id="beep" type="audio/wav" style="visibility:hidden;" data="sounds/beep.wav">
+			<param name="autostart" value="false" />
+		</object>
+		<form>
+			<input type="button" Value="Beep" onclick="PlaySound('beep')" />
+			<input type="button" Value="3 Beeps" onclick="PlaySound('beep3')" />
+		</form>
+	</body>
+</html>

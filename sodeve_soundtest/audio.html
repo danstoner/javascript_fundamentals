@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function PlaySound(soundObj) {
+				var sound = document.getElementById(soundObj);
+				if (sound)
+					sound.play();
+			}
+		</script>
+	</head>
+	<body>	
+		<form>
+			<button type="button" onclick="PlaySound('beep')">Beep</button>	   
+			<button type="button" onclick="PlaySound('beep3')">Beep 3</button>
+		</form>
+		<audio src="sounds/beep3.wav"  id="beep3" />
+		<audio src="sounds/beep.wav"  id="beep" />
+	</body>
+</html>
